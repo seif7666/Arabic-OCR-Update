@@ -40,13 +40,13 @@ def run2(obj):
 
 def run(image_path):
     # Read test image
-    print(f'Called For {image_path}')
     full_image = cv.imread(image_path)
     predicted_text = ''
 
     # Start Timer
     before = time.time()
     words = extract_words(full_image)       # [ (word, its line),(word, its line),..  ]
+    print(f'Words Length is {words}')
     pool = mp.Pool(mp.cpu_count())
     predicted_words = pool.map(run2, words)
     pool.close()
