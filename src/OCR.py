@@ -88,7 +88,7 @@ if __name__ == "__main__":
     for t in types:
         images_paths.extend(glob(f'test/*.{t}'))
     before = time.time()
-    print(images_path)
+    print(images_paths)
 
     # pool = mp.Pool(mp.cpu_count())
 
