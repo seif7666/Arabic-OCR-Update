@@ -40,6 +40,7 @@ def run2(obj):
 
 def run(image_path):
     # Read test image
+    print(f'Called For {image_path}')
     full_image = cv.imread(image_path)
     predicted_text = ''
 
@@ -88,7 +89,6 @@ if __name__ == "__main__":
     for t in types:
         images_paths.extend(glob(f'test/*.{t}'))
     before = time.time()
-    print(images_paths)
 
     # pool = mp.Pool(mp.cpu_count())
 
@@ -99,12 +99,13 @@ if __name__ == "__main__":
     # Method2
     # for _ in tqdm(pool.imap_unordered(run, images_paths), total=len(images_paths)):
     #     pass
-    """
+    
     running_time = []
 
     for images_path in tqdm(images_paths,total=len(images_paths)):
         running_time.append(run(images_path))
-
+        break
+    """
     running_time.sort()
     with open('output/running_time.txt', 'w') as r:
         for t in running_time:
