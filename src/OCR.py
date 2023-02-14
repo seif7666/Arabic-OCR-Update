@@ -18,8 +18,8 @@ def load_model():
         
 def run2(obj):
     word, line = obj
-    print(f'Word is {word.shape}')
-    print(f'Line is {line.shape}')
+    #print(f'Word is {word.shape}')
+    #print(f'Line is {line.shape}')
 
     model = load_model()
     # For each word in the image
@@ -88,6 +88,7 @@ if __name__ == "__main__":
     for t in types:
         images_paths.extend(glob(f'test/*.{t}'))
     before = time.time()
+    print(images_path)
 
     # pool = mp.Pool(mp.cpu_count())
 
@@ -98,7 +99,7 @@ if __name__ == "__main__":
     # Method2
     # for _ in tqdm(pool.imap_unordered(run, images_paths), total=len(images_paths)):
     #     pass
-
+    """
     running_time = []
 
     for images_path in tqdm(images_paths,total=len(images_paths)):
@@ -114,3 +115,4 @@ if __name__ == "__main__":
     after = time.time()
     print(f'total time to finish {len(images_paths)} images:')
     print(after - before)
+    """
