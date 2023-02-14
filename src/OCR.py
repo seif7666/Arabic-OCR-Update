@@ -58,7 +58,11 @@ def run(image_path):
     exc_time = after-before
     # Create file with the same name of the image
     print(f'Image path is {image_path}')
-    img_name = image_path.split('\\')[1].split('.')[0]
+    try:
+        img_name = image_path.split('\\')[1].split('.')[0]
+    except:
+        img_name = image_path.split('/')[1].split('.')[0]
+
 
     with open(f'output/text/{img_name}.txt', 'w', encoding='utf8') as fo:
         fo.writelines(predicted_text)
