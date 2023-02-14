@@ -18,6 +18,9 @@ def load_model():
         
 def run2(obj):
     word, line = obj
+    print(f'Word is {word}')
+    print(f'Line is {line}')
+
     model = load_model()
     # For each word in the image
     char_imgs = segment(line, word)
@@ -57,7 +60,6 @@ def run(image_path):
 
     exc_time = after-before
     # Create file with the same name of the image
-    print(f'Image path is {image_path}')
     try:
         img_name = image_path.split('\\')[1].split('.')[0]
     except:
