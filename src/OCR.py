@@ -18,8 +18,8 @@ def load_model():
         
 def run2(obj):
     word, line = obj
-    print(f'Word is {word}')
-    print(f'Line is {line}')
+    print(f'Word is {word.shape}')
+    print(f'Line is {line.shape}')
 
     model = load_model()
     # For each word in the image
